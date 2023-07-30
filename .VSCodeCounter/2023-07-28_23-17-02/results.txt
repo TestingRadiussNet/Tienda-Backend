@@ -1,0 +1,60 @@
+Date : 2023-07-28 23:17:02
+Directory : /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api
+Total : 29 files,  6801 codes, 3 comments, 254 blanks, all 7058 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      5,740 |          0 |          2 |      5,742 |
+| JavaScript |         27 |      1,061 |          3 |        252 |      1,316 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                     |         29 |      6,801 |          3 |        254 |      7,058 |
+| . (Files)                                                                                                             |          3 |      5,789 |          0 |         15 |      5,804 |
+| controllers                                                                                                           |         11 |        810 |          2 |        202 |      1,014 |
+| global                                                                                                                |          1 |          1 |          0 |          1 |          2 |
+| models                                                                                                                |         11 |        121 |          0 |         22 |        143 |
+| security                                                                                                              |          1 |         36 |          0 |          8 |         44 |
+| services                                                                                                              |          2 |         44 |          1 |          6 |         51 |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                              | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/app.js                                       | JavaScript |         49 |          0 |         13 |         62 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/admins.controller.js             | JavaScript |        130 |          1 |         35 |        166 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/archivos.controller.js           | JavaScript |         14 |          0 |          3 |         17 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/autenticacion.controller.js      | JavaScript |        150 |          1 |         39 |        190 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/categorias.controller.js         | JavaScript |         73 |          0 |         19 |         92 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/compras-usuario.controller.js    | JavaScript |         14 |          0 |          5 |         19 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/compras.controller.js            | JavaScript |         45 |          0 |         10 |         55 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/productos.controller.js          | JavaScript |         89 |          0 |         21 |        110 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/proveedores.controller.js        | JavaScript |         67 |          0 |         17 |         84 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/servicios-internet.controller.js | JavaScript |         87 |          0 |         16 |        103 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/tarjetas.controller.js           | JavaScript |         87 |          0 |         26 |        113 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/tienda.controller.js             | JavaScript |         54 |          0 |         11 |         65 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/global/urls.js                               | JavaScript |          1 |          0 |          1 |          2 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/admins.model.js                       | JavaScript |          7 |          0 |          2 |          9 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/categorias.model.js                   | JavaScript |          5 |          0 |          2 |          7 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/compra-detalles.model.js              | JavaScript |         19 |          0 |          2 |         21 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/compras-usuario-detalles.model.js     | JavaScript |         15 |          0 |          2 |         17 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/compras-usuario.model.js              | JavaScript |          6 |          0 |          2 |          8 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/compras.model.js                      | JavaScript |          6 |          0 |          2 |          8 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/producto.model.js                     | JavaScript |         19 |          0 |          2 |         21 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/proveedores.model.js                  | JavaScript |          7 |          0 |          2 |          9 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/servicio-internet.model.js            | JavaScript |         13 |          0 |          2 |         15 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/tarjetas.model.js                     | JavaScript |         13 |          0 |          2 |         15 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/usuarios.model.js                     | JavaScript |         11 |          0 |          2 |         13 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/package-lock.json                            | JSON       |      5,698 |          0 |          1 |      5,699 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/package.json                                 | JSON       |         42 |          0 |          1 |         43 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/security/security.js                         | JavaScript |         36 |          0 |          8 |         44 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/services/db.service.js                       | JavaScript |         18 |          0 |          3 |         21 |
+| /Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/services/email.service.js                    | JavaScript |         26 |          1 |          3 |         30 |
+| Total                                                                                                                 |            |      6,801 |          3 |        254 |      7,058 |
++-----------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
