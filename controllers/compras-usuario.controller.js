@@ -108,36 +108,17 @@ ComprasUsuarioController.post('/compras/:usuario/nueva', async (req, res) => {
 
         await compra.save();
 
-        if (requiereInstalacion) {
-            const instalacion = await Instalaciones.create({
-                compra: compra._id,
-                fecha: null,
-                trabajador: null,
-            });
-
-            await EnviarCorreo(usuario.correo, 'Compra Realizada', 
+        await EnviarCorreo(usuario.correo, 'Compra Realizada', 
             `
                 <h1>Compra realizada</h1>
                 <p>Querido ${usuario.nombre}</p>
                 <p>Su compra ha sido completada con éxito.</p>
                 <p>Espere a que un trabajador programe la fecha de entrega</p>
-                <p>Espere a que un trabajador programe la fecha de instalación</p>
+                ${requiereInstalacion ?"<p>Espere a que un trabajador programe la fecha de instalación</p>" : ""}
                 <a href="${urlFrontend}/mis-compras/${compra._id}">Visite aquí para ver la información de su compra, o acceda desde el apartado "Mis Compras" en la aplicación</a>
             `
             );
             res.status(201).json({msg: 'Compra realizada correctamente'});
-        } else{
-            await EnviarCorreo(usuario.correo, 'Compra Realizada', 
-            `
-                <h1>Compra realizada</h1>
-                <p>Querido ${usuario.nombre}</p>
-                <p>Su compra ha sido completada con éxito.</p>
-                <p>Espere a que un trabajador programe la fecha de entrega</p>
-                <a href="${urlFrontend}/mis-compras/${compra._id}">Visite aquí para ver la información de su compra, o acceda desde el apartado "Mis Compras" en la aplicación</a>
-            `
-            );
-            res.status(201).json({msg: 'Compra realizada correctamente'});
-        }
     } catch (error) {
         console.log(error);
         res.status(500).json({msg: 'Hubo un error'}); 

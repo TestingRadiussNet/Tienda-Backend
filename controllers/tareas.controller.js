@@ -66,16 +66,19 @@ TareasController.post('/tareas/programar-fecha-entrega/:id', async (req, res) =>
 TareasController.post('/tareas/programar-fecha-instalacion/:id', async (req, res) => {
     const datos = req.body;
     const idCompra = req.params.id;
-
     try {
         const compra = await ComprasUsuario.findById(idCompra).populate('usuario');
 
-        const instalacion = await Instalaciones.findOne({
-            compra: compra._id,
-        });
+        if (!compra) return res.status(404).json({msg: "Compra no encontrada"});
 
-        instalacion.fecha = datos.fecha;
-        instalacion.trabajador = datos.trabajador;
+        const instalacion = await Instalaciones.create({
+            compra: compra.id,
+            fecha: new Date(datos.fecha),
+            trabajador: datos.trabajador
+        });
+        
+        compra.requiereInstalacion = false;
+        await compra.save();
 
         await instalacion.save();
 
