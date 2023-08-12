@@ -28,6 +28,11 @@ TiendaController.get('/tienda/producto/:slug', async (req, res) => {
             return;
         }
 
+        if (!encontrado.activo) {
+            res.status(404).json({msg: "Producto no encontrado"});
+            return;
+        }
+
         res.status(200).json({data: encontrado});
     } catch (e) {
         console.log(e);
@@ -54,6 +59,11 @@ TiendaController.get('/tienda/servicio/:id', async (req, res) => {
 
         if (!encontrado) {
             res.status(404).json({msg: 'No encontrado'});
+            return;
+        }
+
+        if (!encontrado.activo) {
+            res.status(404).json({msg: "Servicio no encontrado"});
             return;
         }
 

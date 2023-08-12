@@ -1,12 +1,12 @@
 import { Schema, model } from "mongoose";
 
 const schema = new Schema({
-    compra: {
+    contratacion: {
         type: Schema.Types.ObjectId,
-        ref: 'compras-usuario',
+        ref: 'contrataciones',
     },
     fecha: Date,
     trabajador: String,
 });
 
-export const Instalaciones = model('instalaciones', schema);
+export const InstalacionesInternet = model('instalaciones-internet', schema);

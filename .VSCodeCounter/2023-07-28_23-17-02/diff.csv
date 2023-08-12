@@ -1,9 +1,0 @@
-"filename", "language", "JavaScript", "comment", "blank", "total"
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/app.js", "JavaScript", 2, 0, 0, 2
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/compras-usuario.controller.js", "JavaScript", 14, 0, 5, 19
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/compras.controller.js", "JavaScript", 1, 0, 0, 1
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/controllers/tarjetas.controller.js", "JavaScript", 1, 0, 0, 1
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/compras-usuario-detalles.model.js", "JavaScript", 15, 0, 2, 17
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/compras-usuario.model.js", "JavaScript", 6, 0, 2, 8
-"/Users/raxel/Projects/Escalante-RadiussNet/Backendserver/radiuss-net-api/models/tarjetas.model.js", "JavaScript", 1, 0, 0, 1
-"Total", "-", 40, 0, 9, 49

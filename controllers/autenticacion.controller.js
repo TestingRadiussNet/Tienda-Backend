@@ -112,10 +112,10 @@ AutenticacionController.post('/autenticacion/recuperar', async (req, res) => {
         `
             <h1>Recuperar Cuenta</h1>
             <p>Ingrese al siguiente link para recuperar la cuenta:</p>
-            <a>${urlFrontend}/recuperar/${token}</a>
+            <a href="${urlFrontend}/recuperar/${token}">${urlFrontend}/recuperar/${token}</a>
         `)
 
-        res.status(200).json({msg: "Recuperación"});
+        res.status(200).json({msg: "Revise su correo electrónico"});
     } catch (error) {
         console.log(e);
         res.status(500).json({msg: 'Hubo un error'});   

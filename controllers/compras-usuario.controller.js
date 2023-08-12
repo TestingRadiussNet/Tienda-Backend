@@ -14,6 +14,34 @@ import { Tarjetas } from "../models/tarjetas.model.js";
 
 export const ComprasUsuarioController = Router();
 
+ComprasUsuarioController.get('/compras/usuario/:id/detalles', async (req, res) => {
+    const idCompra = req.params.id;
+
+    try {
+        const compra = await ComprasUsuario.findById(idCompra);
+        if (!compra) return res.status(404).json({msg: 'No encontrado'});
+        const detalles = await ComprasUsuarioDetalles.find({compra: idCompra}).populate('producto');
+
+        res.status(200).json({msg: 'Detalles', data: detalles});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({msg: 'Hubo un error'}); 
+    }
+});
+ComprasUsuarioController.get('/compras/:usuario', async (req, res) => {
+    const usuarioID = req.params.usuario;
+
+    try {
+        const lista = await ComprasUsuario.find({usuario: usuarioID});
+
+        res.status(200).json({msg: "Mis compras", data: lista});
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({msg: 'Hubo un error'}); 
+    }
+});
+
 ComprasUsuarioController.post('/compras/:usuario/nueva', async (req, res) => {
     const usuarioID = req.params.usuario;
     const {datosCompra, requiereInstalacion, tarjeta, cvv} = req.body;
@@ -82,10 +110,9 @@ ComprasUsuarioController.post('/compras/:usuario/nueva', async (req, res) => {
 
         if (requiereInstalacion) {
             const instalacion = await Instalaciones.create({
-                usuario: usuarioID,
+                compra: compra._id,
                 fecha: null,
                 trabajador: null,
-                estado: "solicitada",
             });
 
             await EnviarCorreo(usuario.correo, 'Compra Realizada', 
@@ -112,7 +139,7 @@ ComprasUsuarioController.post('/compras/:usuario/nueva', async (req, res) => {
             res.status(201).json({msg: 'Compra realizada correctamente'});
         }
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'}); 
     }
 });

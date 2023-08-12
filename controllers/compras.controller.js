@@ -45,11 +45,30 @@ ComprasController.post('/compras/nueva', async (req, res) => {
 });
 ComprasController.get('/compras/listado', async (req, res) => {
     try {
-        const catalogo = await Compras.find({});
+        const catalogo = await Compras.find({}).sort({ _id: -1 });
 
         res.status(200).json({data: catalogo});
     } catch (e) {
         console.log(e);
         res.status(500).json({msg: 'Hubo un error'});   
+    }
+});
+ComprasController.get('/compras/detalles/:id', async (req, res) => {
+    const id = req.params.id;
+
+    try {
+        const compra = await Compras.findById(id);
+
+        if (!compra) {
+            res.status(404).json({msg: 'Compra no encontrada'});
+            return;
+        }
+
+        const detalles = await CompraDetalles.find({compra: compra._id}).populate('proveedor').populate('producto');
+
+        res.status(200).json({msg: 'Detalles', data: detalles});
+    } catch (e) {
+        console.log(e);
+        res.status(500).json({msg: 'Hubo un error'}); 
     }
 });

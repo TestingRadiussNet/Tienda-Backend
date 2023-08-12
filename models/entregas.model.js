@@ -6,7 +6,6 @@ const schema = new Schema({
         ref: 'compras-usuario',
     },
     fecha: Date,
-    trabajador: String,
 });
 
-export const Instalaciones = model('instalaciones', schema);
+export const Entregas = model('entregas', schema);

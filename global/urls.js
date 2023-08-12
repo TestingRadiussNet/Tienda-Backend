@@ -1,1 +1,1 @@
-export const urlFrontend = "http://0.0.0.0:5173";
+export const urlFrontend = "http://localhost:5174";

@@ -4,6 +4,7 @@ import * as bcrypt from "bcrypt";
 
 import { Tarjetas } from "../models/tarjetas.model.js";
 import { Usuarios } from "../models/usuarios.model.js";
+import mongoose from "mongoose";
 
 export const TarjetasController = Router();
 
@@ -18,10 +19,12 @@ TarjetasController.post('/tarjetas/:usuario/nueva', async (req, res) => {
             res.status(404).json({msg: "Usuario no encontrado"});
             return;
         }
-
+        
         const encontrado = await Tarjetas.findOne({
-            numeros: datos.numeros,
+            numeroTarjeta: datos.numeroTarjeta,
         });
+
+        console.log(encontrado); 
 
         if (encontrado) {
             res.status(400).json({msg: "Ya tienes una tarjeta con datos similares"});
@@ -55,8 +58,7 @@ TarjetasController.get('/tarjetas/:usuario/listado', async (req, res) => {
             res.status(404).json({msg: "Usuario no encontrado"});
             return;
         }
-
-        const lista = await Tarjetas.find({usuario: usuarioEncontrado._id});
+        const lista = await Tarjetas.find({usuario: usuarioEncontrado.id});
 
         res.status(200).json({data: lista});
     } catch (error) {

@@ -31,7 +31,7 @@ AdminController.post('/admin/crear-cuenta', async (req, res) => {
 
         res.status(200).json({msg: 'Cuenta admin creada'});
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});     
     }
 });
@@ -82,7 +82,7 @@ AdminController.get('/admin/datos', validarJWT, async (req, res) => {
 
         res.status(200).json({data: encontrado});
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});   
     }
 });
@@ -131,7 +131,7 @@ AdminController.get('/admin/recuperar/:token', async (req, res) => {
 
         res.status(200).json({msg: 'Ok'})
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});   
     }
 });
