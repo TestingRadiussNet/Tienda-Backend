@@ -34,7 +34,7 @@ AutenticacionController.post('/autenticacion/crear-cuenta', async (req, res) => 
 
         res.status(200).json({msg: 'Cuenta creada'});
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});     
     }
 });
@@ -68,7 +68,7 @@ AutenticacionController.post('/autenticacion/login', async (req, res) => {
             data: {jwt}
         });
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});   
     }
 });
@@ -85,7 +85,7 @@ AutenticacionController.get('/autenticacion/datos', validarJWT, async (req, res)
 
         res.status(200).json({data: encontrado});
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});   
     }
 });
@@ -134,7 +134,7 @@ AutenticacionController.get('/autenticacion/recuperar/:token', async (req, res) 
 
         res.status(200).json({msg: 'Ok'})
     } catch (error) {
-        console.log(e);
+        console.log(error);
         res.status(500).json({msg: 'Hubo un error'});   
     }
 });

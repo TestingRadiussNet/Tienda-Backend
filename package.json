@@ -32,6 +32,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.0",
     "@babel/preset-env": "^7.18.0",
+    "@types/express": "^4.17.17",
     "babel-loader": "^8.2.5",
     "nodemon": "^2.0.16"
   },

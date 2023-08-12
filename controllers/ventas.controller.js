@@ -18,11 +18,11 @@ VentasController.get('/ventas/listado', async (req, res) => {
 VentasController.get('/ventas/detalles/:id', async (req, res) => {
     const id = req.params.id;
     try {
-        const compra = await ComprasUsuario.findById(id);
+        const compra = await ComprasUsuario.findById(id).populate('usuario');
         if (!compra) return res.status(404).json({msg: 'No encontrado'});
         const detalles = await ComprasUsuarioDetalles.find({compra: id}).populate('producto');
 
-        res.status(200).json({data: detalles});
+        res.status(200).json({data: detalles, usuario: compra.usuario});
     } catch (e) {
         console.log(e);
         res.status(500).json({msg: 'Hubo un error'});

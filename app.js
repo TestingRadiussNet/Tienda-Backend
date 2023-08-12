@@ -21,6 +21,7 @@ import { ComprasUsuarioController } from "./controllers/compras-usuario.controll
 import { TareasController } from "./controllers/tareas.controller.js";
 import { ContratacionesController } from "./controllers/contrataciones.controller.js";
 import { VentasController } from "./controllers/ventas.controller.js";
+import { EstadisticasController } from "./controllers/estadisticas.controller.js";
 
 const server = express();
 
@@ -56,6 +57,7 @@ const iniciar = async () => {
     server.use('/', TareasController);
     server.use('/', ContratacionesController);
     server.use('/', VentasController);
+    server.use('/', EstadisticasController);
 
     server.use('*', (req, res) => {
         res.status(404).json({msg: 'Not found'});
